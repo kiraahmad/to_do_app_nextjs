@@ -36,7 +36,7 @@ const index = () => {
             <Grid justify="center" alignItems="center" direction="column" container style={{backgroundColor: '#E6E6FA'}} item xs={12}>
             <h1 style={{fontFamily: 'Original Surfer'}} >Welcome to Todo list Next.js App</h1>
             <form >
-                <input type="text" onChange={handleChange} placeholder="Add a task" value={userInput} /> <Button onClick={handleAddToList} variant="contained" color="primary" size="small">Submit</Button>
+                <input type="text" value={userInput} onChange={handleChange} placeholder="Add a task"/> <Button onClick={handleAddToList} variant="contained" color="primary" size="small">Submit</Button>
                 <ul>
                     {
                         todoList.length >= 1 ? todoList.map((item, index) =>{
@@ -45,7 +45,7 @@ const index = () => {
                                 handleDelete(item)
                             }}>X</button> </li>
                         })
-                        : 'Enter a To do Item'
+                        : <h5 style={{fontFamily: 'Original Surfer'}}>'Enter a To do Item'</h5>
                     }
                 </ul>
             </form>
